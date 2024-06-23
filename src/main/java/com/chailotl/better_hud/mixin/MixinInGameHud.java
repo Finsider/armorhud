@@ -25,16 +25,16 @@ public abstract class MixinInGameHud
 		assert client.player != null;
 
         int x = client.getWindow().getScaledWidth() / 2 - 7;
-		int y = client.getWindow().getScaledHeight() - 39;
+	int y = client.getWindow().getScaledHeight() - 39;
 
-		for (ItemStack armor : client.player.getArmorItems()) {
-			if (armor.isDamageable()) {
-				int i = armor.getItemBarStep();
-				int j = armor.getItemBarColor();
+	for (ItemStack armor : client.player.getArmorItems()) {
+		if (armor.isDamageable()) {
+			int i = armor.getItemBarStep();
+			int j = armor.getItemBarColor();
 
-				context.fill(x, y, x + 13, y + 2, 0xFF000000);
-				context.fill(x, y, x + i, y + 1, j | 0xFF000000);
-				y -= 3;
+			context.fill(x, y, x + 13, y + 2, 0xFF000000);
+			context.fill(x, y, x + i, y + 1, j | 0xFF000000);
+			y -= 3;
 			}
 		}
 	}
