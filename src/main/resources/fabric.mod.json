@@ -1,0 +1,26 @@
+{
+	"schemaVersion": 1,
+	"id": "chai_armor_hud",
+	"version": "1.0.1",
+	"name": "Chai's Armor HUD",
+	"description": "Minimal Armor HUD!",
+	"authors": [
+		"Chai"
+	],
+	"license": "LGPL-3.0",
+	"environment": "*",
+	"entrypoints": {
+		"client": [
+			"com.chailotl.better_hud.Main"
+		]
+	},
+	"mixins": [
+		"better_hud.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.7",
+		"minecraft": "~1.20",
+		"java": ">=17",
+		"fabric-api": "*"
+	}
+}
