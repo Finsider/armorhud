@@ -4,7 +4,6 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.item.ItemStack;
-import net.raphimc.immediatelyfastapi.ImmediatelyFastApi;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -28,7 +27,6 @@ public abstract class MixinInGameHud
         int x = client.getWindow().getScaledWidth() / 2 - 7;
 		int y = client.getWindow().getScaledHeight() - 39;
 
-		ImmediatelyFastApi.getApiImpl().getBatching().beginHudBatching();
 		for (ItemStack armor : client.player.getArmorItems()) {
 			if (armor.isDamageable()) {
 				int i = armor.getItemBarStep();
@@ -39,6 +37,5 @@ public abstract class MixinInGameHud
 				y -= 3;
 			}
 		}
-		ImmediatelyFastApi.getApiImpl().getBatching().endHudBatching();
 	}
 }
